@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	grpcserver "google.golang.org/grpc"
 	"log"
 	"net"
 	"os"
@@ -10,6 +9,8 @@ import (
 	"ride-sharing/shared/env"
 	"ride-sharing/shared/messaging"
 	"syscall"
+
+	grpcserver "google.golang.org/grpc"
 )
 
 var GrpcAddr = ":9092"
@@ -45,6 +46,13 @@ func main() {
 	// Starting the gRPC server
 	grpcServer := grpcserver.NewServer()
 	NewGrpcHandler(grpcServer, svc)
+
+	consumer := NewTripConsumer(rabbitmq)
+	go func() {
+		if err := consumer.Listen(); err != nil {
+			log.Fatalf("Failed to listen to the message: %v", err)
+		}
+	}()
 
 	log.Printf("Starting gRPC server Driver service on port %s", lis.Addr().String())
 
