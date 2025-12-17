@@ -1,6 +1,6 @@
 # Microservices with Go
 
-This is the Microservices with Go course project using Kubernetes for both local development and for production.
+This is the Microservices with Go project using Kubernetes for both local development and for production.
 
 ## Installation
 The project requires a couple tools to run, most of which are part of many developer's toolchains.
