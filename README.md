@@ -1,4 +1,4 @@
-# Microservices with Go starter project
+# Microservices with Go
 
 This is the Microservices with Go course project using Kubernetes for both local development and for production.
 
