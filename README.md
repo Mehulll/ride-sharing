@@ -2,9 +2,6 @@
 
 This is the Microservices with Go course project using Kubernetes for both local development and for production.
 
-The goal of this template is to provide a stable starting point for building microservices with Go.
-It comes basic, already configured Tiltfile, Dockerfiles, and a basic architecture for building microservices.
-
 ## Installation
 The project requires a couple tools to run, most of which are part of many developer's toolchains.
 
